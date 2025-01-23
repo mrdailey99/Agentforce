@@ -130,7 +130,7 @@
           <value class="value" valueClass="string">OpenAI_API</value>
         </argument>
         <argument id="connectionId">
-          <value class="value" valueClass="id">b88f3f57-5268-4db3-a23c-5c9fcc087683</value>
+          <value class="value" valueClass="id">9229743f-d6d7-4ec6-ac52-36c7f920fb21</value>
         </argument>
         <argument id="resultName">
           <value class="value" valueClass="string">OpenAI_Platform_Connection</value>

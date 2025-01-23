@@ -39,7 +39,7 @@
         </connection>
         <connection id="9229743f-d6d7-4ec6-ac52-36c7f920fb21" name="OpenAI_API">
           <connectionUrls>
-            <connectionUrl url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
+            <connectionUrl secureStorageNodeId="374ede6c-0443-4646-9200-1db13f4cdb74" url="restservice:url=https://api.openai.com/v1;apiKey={apiKey};authenticationType=API_KEY">
               <customHeaders/>
             </connectionUrl>
           </connectionUrls>
