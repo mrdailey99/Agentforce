@@ -32,7 +32,7 @@
       <connections>
         <connection id="a88cea81-8219-4565-98d3-c887d52847bb" name="OpenAI_Chat">
           <connectionUrls>
-            <connectionUrl secureStorageNodeId="a5dcfbe0-9deb-4053-85e8-595eef8758eb" url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
+            <connectionUrl url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
               <customHeaders/>
             </connectionUrl>
           </connectionUrls>
