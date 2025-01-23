@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="1eb18cb1-3316-4add-8a66-f4315d6b555a" id="22" visibility="Internal">
+  <summary>&lt;p&gt;This callable test passes a Base64 Encoded Image and a Description to the OpenAI chat completion endpoint to verify that the Base64 Encoded Image matches the Description. The verification will return True, False or Unknown.&lt;/p&gt;&lt;p&gt;Input Parameters:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Base64_Encoded_Image&lt;/b&gt;: A Base64 encoded image that will be verified against the Description.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Description&lt;/b&gt;: A Description that will be used to verify the image.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Output Parameters:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Response_Status_Code&lt;/b&gt;: The HTTP response status code, such as 200 meaning ‘OK’.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Response_Status_Message&lt;/b&gt;: The HTTP response status message, such as ‘Bad Request’ for the 400 code.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Image_Verified&lt;/b&gt;: Whether the Description matches the Base64 Encoded Image. Values: True, False, Unknown. This parameter will be empty if the Response_Status_Code is not 200.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Response_Error_Message&lt;/b&gt;: If the Response_Status_Code is not 200, i.e. an error has occurred, this parameter will contain OpenAI specific information that describes the cause of the error in more detail. If Response_Status_Code is 200, this parmeter will be empty.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</summary>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="c3714ed4-5749-4960-a8f6-985236f855a1" name="SetValues" testItemId="26" title="Set Values: Prompt_Template">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Prompt_Template</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">You are an image verification assistant. Your task is to determine whether a given image matches a description that will be provided after the text 'Input - Image Description:' at the end of this prompt. Your response must be concise and one of the following True, False or Unknown responses: True: The image clearly matches the description, False: The image clearly does not match the description or Unknown: It is unclear or ambiguous whether the image matches the description based on the given information. Provide only the response (True, False, or Unknown) and do not include explanations. Input - Image Description: %DESCRIPTION%</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="77f572fa-9a50-4097-a262-dbc3b04fb4bb" name="SetValues" testItemId="27" title="Set Values: Prompt">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Prompt</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="StringReplace">
+                  <argument id="sourceString">
+                    <value class="variable">
+                      <path element="Prompt_Template"/>
+                    </value>
+                  </argument>
+                  <argument id="findString">
+                    <value class="value" valueClass="string">%DESCRIPTION%</value>
+                  </argument>
+                  <argument id="replacementString">
+                    <value class="variable">
+                      <path element="Description"/>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="874de0a9-996c-4651-b906-b526abd8f73a" isTitleUpdated="true" name="SetValues" testItemId="25" title="Set Values: OpenAI_Chat_Request_Body_Template">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">OpenAI_Chat_Request_Body_Template</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">{"model": "gpt-4o-mini", "messages": [{"role": "user", "content": [{"type": "text", "text": "%PROMPT%"}, {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64,{%BASE64ENCODEDIMAGE%}"}}]}], "max_tokens": 300}</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="29be807a-b0ec-4300-8078-b8bf635281d0" isTitleUpdated="true" name="SetValues" testItemId="28" title="Set Values: OpenAI_Chat_Request_Body">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">OpenAI_Chat_Request_Body</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="StringReplace">
+                  <argument id="sourceString">
+                    <value class="funcCall" id="StringReplace">
+                      <argument id="sourceString">
+                        <value class="variable">
+                          <path element="OpenAI_Chat_Request_Body_Template"/>
+                        </value>
+                      </argument>
+                      <argument id="findString">
+                        <value class="value" valueClass="string">%PROMPT%</value>
+                      </argument>
+                      <argument id="replacementString">
+                        <value class="variable">
+                          <path element="Prompt"/>
+                        </value>
+                      </argument>
+                    </value>
+                  </argument>
+                  <argument id="findString">
+                    <value class="value" valueClass="string">%BASE64ENCODEDIMAGE%</value>
+                  </argument>
+                  <argument id="replacementString">
+                    <value class="variable">
+                      <path element="Base64_Encoded_Image"/>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.WebConnect" guid="34bc6268-e9a5-4fa8-9456-acf5c0fc1568" name="WebConnect" testItemId="23" title="Web Connect: OpenAI_Platform_Connection">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OpenAI_Chat</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">a88cea81-8219-4565-98d3-c887d52847bb</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">OpenAI_Platform_Connection</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" guid="7c09befd-c566-47e8-aafe-be2fa8cdb32f" name="RestRequest" testItemId="24" title="Web Request (REST): ⇒OpenAI_Chat_Response">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OpenAI_Platform_Connection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=POST&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">OpenAI_Chat_Response</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">OpenAI_Chat_Response_Status</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">/chat/completions</value>
+        </argument>
+        <argument id="restRequestHeader">
+          <value class="value" valueClass="string">Content-Type: application/json</value>
+        </argument>
+        <argument id="restBody">
+          <value class="variable">
+            <path element="OpenAI_Chat_Request_Body"/>
+          </value>
+        </argument>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="86893805-e609-46f1-bff2-4cfc43e0bc27" name="SetValues" testItemId="30" title="Set Values: Response_Status_Code">
+      <tags/>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Response_Status_Code</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="OpenAI_Chat_Response_Status"/>
+                  <path element="StatusCode"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="e5c08a1e-1b50-467f-bc21-9c6f7a0bcf28" name="SetValues" testItemId="31" title="Set Values: Response_Status_Message">
+      <tags/>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Response_Status_Message</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="OpenAI_Chat_Response_Status"/>
+                  <path element="ResponseMessage"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="87ed09b8-eb48-489f-b609-1db80effe560" name="SetValues" testItemId="41" title="Set Values: Image_Verified">
+      <tags/>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Image_Verified</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="16e94f93-914a-4411-a1f7-a8c133d1c905" name="SetValues" testItemId="42" title="Set Values: Response_Error_Message">
+      <tags/>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Response_Error_Message</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" guid="38669b1f-83c6-40cc-97ea-16240602bc04" name="If" testItemId="33" title="If: {Response_Status_Code = 200}">
+      <tags/>
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="Response_Status_Code"/>
+            </lhs>
+            <rhs class="value" valueClass="decimal">200</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="34">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="5ebef97a-b6f9-42f9-8d47-3168635eb7b9" name="SetValues" testItemId="29" title="Set Values: Image_Verified">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Image_Verified</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="variable">
+                          <path element="OpenAI_Chat_Response"/>
+                          <path element="choices">
+                            <filter class="index">
+                              <index valueClass="decimal">0</index>
+                            </filter>
+                          </path>
+                          <path element="message"/>
+                          <path element="content"/>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+        <clause name="else" testItemId="36">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="5409bed0-a9c0-4359-b4df-e2671c82fe21" name="SetValues" testItemId="32" title="Set Values: Response_Error_Message">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Response_Error_Message</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="variable">
+                          <path element="OpenAI_Chat_Response"/>
+                          <path element="error"/>
+                          <path element="message"/>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="Base64_Encoded_Image" passwordVariableAllowed="true" title="Base64_Encoded_Image">
+      <summary>The Base64 Encoded Image that will be verified against the Description.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="Description" passwordVariableAllowed="true" title="Description">
+      <summary>A description of the image that the Image_URL points to that will be used to verify the picture.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="Response_Status_Code" passwordVariableAllowed="true" title="Response Status Code">
+      <summary>The HTTP response status code.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">1</valueConstraint>
+            <valueConstraint name="maxLength">1000</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="Response_Status_Code"/>
+      </sourceValue>
+    </param>
+    <param name="Response_Status_Message" passwordVariableAllowed="true" title="Response Status Message">
+      <summary>The HTTP response status message.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">1</valueConstraint>
+            <valueConstraint name="maxLength">1000</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="Response_Status_Message"/>
+      </sourceValue>
+    </param>
+    <param name="Image_Verified" passwordVariableAllowed="true" title="Image Verified">
+      <summary>Indicates whether the Description accurately describes the image that the Image_URL points to. Values are True, False or Unknown.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">1</valueConstraint>
+            <valueConstraint name="maxLength">1000</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="Utterance_Intent_Match"/>
+      </sourceValue>
+    </param>
+    <param name="Response_Error_Message" passwordVariableAllowed="true" title="Response_Error_Message">
+      <summary>A more detailed error message that is returned by the OpenAI API is the Response_Status_Code is not 200.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">1</valueConstraint>
+            <valueConstraint name="maxLength">1000</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="Response_Error_Message"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="Description"/>
+    <argument id="Base64_Encoded_Image"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="Response_Status_Code">
+      <name class="value" valueClass="string">Response_Status_Code</name>
+    </outputArgument>
+    <outputArgument id="Response_Status_Message">
+      <name class="value" valueClass="string">Response_Status_Message</name>
+    </outputArgument>
+    <outputArgument id="Response_Error_Message">
+      <name class="value" valueClass="string">Response_Error_Message</name>
+    </outputArgument>
+    <outputArgument id="Image_Verified">
+      <name class="value" valueClass="string">Image_Verified</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

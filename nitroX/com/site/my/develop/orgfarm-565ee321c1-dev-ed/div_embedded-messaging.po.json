@@ -1,0 +1,40 @@
+{
+  "componentId" : "7bf4d21c-83f8-4921-8b18-d1e448c838fb",
+  "name" : "/com/site/my/develop/orgfarm-565ee321c1-dev-ed/div_embedded-messaging",
+  "tagName" : "div",
+  "qualifier" : ".[@id='embedded-messaging']",
+  "parameters" : [ {
+    "name" : "id",
+    "value" : "embedded-messaging",
+    "comparisonType" : "equals",
+    "default" : true
+  } ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "e5963f70-1e30-4082-a4e5-be56b340076d",
+    "type" : "component::6171f92c-aabe-47ae-9e46-849ec30aa6a3",
+    "label" : "button",
+    "parameters" : [ {
+      "name" : "ariaLabel",
+      "value" : "Hello, have a question? Let’s chat.",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : false
+    }, {
+      "name" : "title",
+      "value" : "Hello, have a question? Let’s chat.",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : false
+    }, {
+      "name" : "type",
+      "value" : "submit",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : true
+    } ],
+    "elements" : [ ]
+  } ]
+}
