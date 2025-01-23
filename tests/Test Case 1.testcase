@@ -235,6 +235,7 @@
         <argument id="captureAfter">
           <value class="value" valueClass="string">false</value>
         </argument>
+        <argument id="uiTargetUrl"/>
       </arguments>
       <clauses>
         <clause name="substeps" testItemId="8">
@@ -283,6 +284,13 @@
           </steps>
         </clause>
       </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
     </apiCall>
   </steps>
 </testCase>
