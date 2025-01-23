@@ -122,10 +122,10 @@
       <tags/>
       <arguments>
         <argument id="connectionName">
-          <value class="value" valueClass="string">OpenAI_Chat</value>
+          <value class="value" valueClass="string">OpenAI_API</value>
         </argument>
         <argument id="connectionId">
-          <value class="value" valueClass="id">a88cea81-8219-4565-98d3-c887d52847bb</value>
+          <value class="value" valueClass="id">b88f3f57-5268-4db3-a23c-5c9fcc087683</value>
         </argument>
         <argument id="resultName">
           <value class="value" valueClass="string">OpenAI_Platform_Connection</value>
