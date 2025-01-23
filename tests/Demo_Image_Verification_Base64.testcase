@@ -135,7 +135,7 @@
         </argument>
       </arguments>
     </apiCall>
-    <caseCall guid="60846ad3-7388-4b28-808b-bda032b9af96" testCaseId="f6f77499-0c18-42a4-acf9-cbf98057113d" testCasePath="tests/Callable_Image_Verification_Base64.testcase" testItemId="14">
+    <caseCall guid="05c42563-b74c-4746-a712-6c856e077364" testCaseId="1eb18cb1-3316-4add-8a66-f4315d6b555a" testCasePath="tests/API/Callable_Image_Verification_Base64.testcase" testItemId="15">
       <arguments>
         <argument id="Base64_Encoded_Image">
           <value class="variable">
@@ -148,20 +148,6 @@
           </value>
         </argument>
       </arguments>
-      <outputArguments>
-        <outputArgument id="Response_Status_Code">
-          <name class="value" valueClass="string">Response_Status_Code</name>
-        </outputArgument>
-        <outputArgument id="Response_Status_Message">
-          <name class="value" valueClass="string">Response_Status_Message</name>
-        </outputArgument>
-        <outputArgument id="Image_Verified">
-          <name class="value" valueClass="string">Image_Verified</name>
-        </outputArgument>
-        <outputArgument id="Response_Error_Message">
-          <name class="value" valueClass="string">Response_Error_Message</name>
-        </outputArgument>
-      </outputArguments>
     </caseCall>
   </steps>
 </testCase>

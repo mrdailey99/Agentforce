@@ -30,13 +30,6 @@
     </connectionClass>
     <connectionClass name="webservice">
       <connections>
-        <connection id="a88cea81-8219-4565-98d3-c887d52847bb" name="OpenAI_Chat">
-          <connectionUrls>
-            <connectionUrl secureStorageNodeId="a5dcfbe0-9deb-4053-85e8-595eef8758eb" url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
-              <customHeaders/>
-            </connectionUrl>
-          </connectionUrls>
-        </connection>
         <connection id="72755da5-26be-4034-bc37-a3c1056ba355" name="Mulesoft_RewardsAPI">
           <connectionUrls>
             <connectionUrl url="restservice:url=https://coralcloud-agentforce-sys-api-ues9o0.5sc6y6-2.usa-e2.cloudhub.io/rewards;authenticationType=NO_AUTHENTICATION">
@@ -44,12 +37,10 @@
             </connectionUrl>
           </connectionUrls>
         </connection>
-        <connection id="b88f3f57-5268-4db3-a23c-5c9fcc087683" name="OpenAI_API">
+        <connection id="9229743f-d6d7-4ec6-ac52-36c7f920fb21" name="OpenAI_API">
           <connectionUrls>
             <connectionUrl url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
-              <customHeaders>
-                <customHeader key="Authorization" value="Bearer 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"/>
-              </customHeaders>
+              <customHeaders/>
             </connectionUrl>
           </connectionUrls>
         </connection>

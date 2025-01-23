@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response_Error_Message__c</fullName>
+    <description>A more detailed error message that is returned by the OpenAI API is the Response_Status_Code is not 200.</description>
+    <label>Response Error Message</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

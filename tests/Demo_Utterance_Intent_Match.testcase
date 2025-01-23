@@ -85,20 +85,20 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="940da8c9-90df-4ec7-8e66-a0c91a2a28d1" name="UiWithScreen" testItemId="2" title="On SF OpenAI Test Home screen">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="940da8c9-90df-4ec7-8e66-a0c91a2a28d1" isTitleUpdated="true" name="UiWithScreen" testItemId="2" title="On SF OpenAI Test Home screen">
       <tags/>
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">OpenAI_Tester_Scratch_Org</value>
         </argument>
         <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?action=ObjectHome&amp;object=OpenAI_Test__c"/>
+          <value class="uiTarget" uri="sf:ui:target?object=OpenAI_Test__c&amp;action=ObjectHome"/>
         </argument>
         <argument id="navigate">
           <value class="value" valueClass="string">Always</value>
         </argument>
         <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF OpenAI Test Home screen</value>
+          <value class="value" valueClass="string">On SF OpenAI Test ? screen</value>
         </argument>
         <argument id="windowSelection">
           <value class="value" valueClass="string">Default</value>
@@ -417,131 +417,19 @@
         </apiParam>
       </generatedParameters>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="243b0670-b8aa-49be-ab95-e834d58e4dc2" name="UiWithScreen" testItemId="19" title="On SF OpenAI Test View screen">
-      <tags/>
-      <arguments>
-        <argument id="uiConnectionName">
-          <value class="value" valueClass="string">OpenAI_Tester_Scratch_Org</value>
-        </argument>
-        <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?action=View&amp;object=OpenAI_Test__c&amp;noOverride=true"/>
-        </argument>
-        <argument id="navigate">
-          <value class="value" valueClass="string">Dont</value>
-        </argument>
-        <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF OpenAI Test View screen</value>
-        </argument>
-        <argument id="windowSelection">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="windowSize">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="closeWindow"/>
-        <argument id="captureBefore">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="captureAfter">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="sfUiTargetObjectId">
-          <value class="value" valueClass="string">a01KO000000VQkgYAG</value>
-        </argument>
-      </arguments>
-      <clauses>
-        <clause name="substeps" testItemId="20">
-          <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" guid="2b55f0bd-0bcf-4e28-9190-44c70d6a2af9" name="UiAssert" testItemId="22" title="UI Assert">
-              <arguments>
-                <argument id="resultName">
-                  <value class="value" valueClass="string">Values</value>
-                </argument>
-                <argument id="resultScope">
-                  <value class="value" valueClass="string">Test</value>
-                </argument>
-                <argument id="fieldAssertions">
-                  <value class="valueList" mutable="Mutable">
-                    <uiFieldAssertion resultName="Utterance__c">
-                      <fieldLocator uri="ui:locator?name=Utterance__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpenAI_Test__c%26field%3DUtterance__c"/>
-                      <attributeAssertions>
-                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
-                      </attributeAssertions>
-                    </uiFieldAssertion>
-                    <uiFieldAssertion resultName="Intent__c">
-                      <fieldLocator uri="ui:locator?name=Intent__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpenAI_Test__c%26field%3DIntent__c"/>
-                      <attributeAssertions>
-                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
-                      </attributeAssertions>
-                    </uiFieldAssertion>
-                  </value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
-                </argument>
-                <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-              </arguments>
-            </apiCall>
-          </steps>
-        </clause>
-      </clauses>
-      <generatedParameters>
-        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
-          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
-          <type>
-            <textType/>
-          </type>
-        </apiParam>
-      </generatedParameters>
-    </apiCall>
-    <caseCall guid="bfc98fbf-5833-40d9-8886-1cc1f27d720b" testCaseId="6f0dac38-0b0a-44b9-8579-34b796b1c2dc" testCasePath="tests/Callable_Utterance_Intent_Match.testcase" testItemId="40">
+    <caseCall guid="62a75ca1-2f50-4584-977f-d45390b41a43" testCaseId="7a2f99b9-033e-45be-995e-6092240d3504" testCasePath="tests/API/Callable_Utterance_Intent_Match.testcase" testItemId="63">
       <arguments>
         <argument id="Utterance">
           <value class="variable">
-            <path element="Values"/>
-            <path element="fields"/>
-            <path element="Utterance__c"/>
-            <path element="value"/>
+            <path element="Utterance"/>
           </value>
         </argument>
         <argument id="Intent">
           <value class="variable">
-            <path element="Values"/>
-            <path element="fields"/>
-            <path element="Intent__c"/>
-            <path element="value"/>
+            <path element="Intent"/>
           </value>
         </argument>
       </arguments>
-      <outputArguments>
-        <outputArgument id="Response_Status_Code">
-          <name class="value" valueClass="string">Response_Status_Code</name>
-        </outputArgument>
-        <outputArgument id="Response_Status_Message">
-          <name class="value" valueClass="string">Response_Status_Message</name>
-        </outputArgument>
-        <outputArgument id="Utterance_Intent_Match">
-          <name class="value" valueClass="string">Utterance_Intent_Match</name>
-        </outputArgument>
-        <outputArgument id="Response_Error_Message">
-          <name class="value" valueClass="string">Response_Error_Message</name>
-        </outputArgument>
-      </outputArguments>
     </caseCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="6a8d3fef-8f99-41a5-8cea-fe87decb186c" name="UiWithScreen" testItemId="53" title="On SF OpenAI Test View screen">
       <arguments>
@@ -580,7 +468,7 @@
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="7faf7bb1-609b-48c2-acdc-8a790996b0b1" name="UiDoAction" testItemId="55" title="Click the Edit button">
               <arguments>
                 <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Edit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Faction%3DEdit%26object%3DOpenAI_Test__c"/>
+                  <value class="uiLocator" uri="ui:locator?name=Edit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpenAI_Test__c%26action%3DEdit"/>
                 </argument>
                 <argument id="interaction">
                   <value class="uiInteraction" uri="ui:interaction?name=action"/>
