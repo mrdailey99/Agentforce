@@ -5,6 +5,7 @@
         <name>Coral_Cloud_Service_Agent</name>
     </botMlDomain>
     
+    
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
