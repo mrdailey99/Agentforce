@@ -37,12 +37,10 @@
             </connectionUrl>
           </connectionUrls>
         </connection>
-        <connection id="ee0849cc-3df3-4382-bc05-45eb82258a7b" name="OpenAI_API">
+        <connection id="91030e9a-c1e3-47f6-ae6b-b11ec807a7df" name="OpenAI_API">
           <connectionUrls>
             <connectionUrl url="restservice:url=https://api.openai.com/v1;authenticationType=NO_AUTHENTICATION">
-              <customHeaders>
-                <customHeader key="Authorization" value="Bearer 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"/>
-              </customHeaders>
+              <customHeaders/>
             </connectionUrl>
           </connectionUrls>
         </connection>
