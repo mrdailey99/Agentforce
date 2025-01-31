@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="f7020f29-8d45-441f-be8d-a197a9462452" id="2">
+<testCase guid="f7020f29-8d45-441f-be8d-a197a9462452" id="4">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="97fb5408-9043-4341-bd99-9718c72791b7" name="SetValues" testItemId="12" title="Set Values: Description">
@@ -11,7 +11,7 @@
                 <value class="value" valueClass="string">Description</value>
               </namedValue>
               <namedValue name="value">
-                <value class="value" valueClass="string">This image shows a gray gray car, in a parking space, pictured from above.</value>
+                <value class="value" valueClass="string">This image shows 2 people laying in the snow looking up.</value>
               </namedValue>
               <namedValue name="valueScope">
                 <value class="value" valueClass="string">Test</value>
@@ -27,12 +27,12 @@
           <value class="value" valueClass="string">ALM_Brand</value>
         </argument>
         <argument id="connectionId">
-          <value class="value" valueClass="id">187299e8-3a2c-41e0-bb61-27c89bc11db4</value>
+          <value class="value" valueClass="id">55bf9436-6dfc-4609-bae3-965e07b0b554</value>
         </argument>
         <argument id="reuseConnectionName"/>
         <argument id="privateBrowsingMode"/>
         <argument id="resultName">
-          <value class="value" valueClass="string">SeleniumConnection</value>
+          <value class="value" valueClass="string">ALM_Brand</value>
         </argument>
         <argument id="resultScope">
           <value class="value" valueClass="string">Test</value>
@@ -40,19 +40,19 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="4e2d84f4-f7fe-422d-b4b8-958420d4c38b" name="UiWithScreen" testItemId="3" title="On div_app component">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="06d262cd-00c1-4445-87d3-80caa1b0f182" name="UiWithScreen" testItemId="16" title="On ALMBrandHome page">
       <arguments>
         <argument id="uiConnectionName">
-          <value class="value" valueClass="string">SeleniumConnection</value>
+          <value class="value" valueClass="string">ALM_Brand</value>
         </argument>
         <argument id="target">
-          <value class="uiTarget" uri="fact:ui:target?prefixPath=%2Fdk%2Falmbrand&amp;guid=6016f0d7-5860-4a68-b6b2-510dc3fa2c3f&amp;fcPkg=common%2Chtml5"/>
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.ALMBrandHome"/>
         </argument>
         <argument id="navigate">
-          <value class="value" valueClass="string">Always</value>
+          <value class="value" valueClass="string">Dont</value>
         </argument>
         <argument id="targetDescription">
-          <value class="value" valueClass="string">On div_app component</value>
+          <value class="value" valueClass="string">On ALMBrandHome page</value>
         </argument>
         <argument id="windowSelection">
           <value class="value" valueClass="string">Default</value>
@@ -70,9 +70,9 @@
         <argument id="uiTargetUrl"/>
       </arguments>
       <clauses>
-        <clause name="substeps" testItemId="4">
+        <clause name="substeps" testItemId="17">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" guid="5df22703-b228-4f24-b648-c784cdba9d22" name="UiAssert" testItemId="5" title="UI Assert">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" guid="a9066528-fc46-488c-b1e9-66419e91a75a" isTitleUpdated="true" name="UiAssert" testItemId="18" title="UI Extract Banner Image Source">
               <arguments>
                 <argument id="resultName">
                   <value class="value" valueClass="string">Values</value>
@@ -82,15 +82,8 @@
                 </argument>
                 <argument id="fieldAssertions">
                   <value class="valueList" mutable="Mutable">
-                    <uiFieldAssertion resultName="json::guid::dc287143-ce60-4fcf-9a4d-ba616d16f089">
-                      <fieldLocator uri="ui:locator?name=json%3A%3Aguid%3A%3Adc287143-ce60-4fcf-9a4d-ba616d16f089"/>
-                      <attributeAssertions>
-                        <uiAttributeAssertion attributeName="alt" comparisonType="None"/>
-                        <uiAttributeAssertion attributeName="class" comparisonType="None"/>
-                        <uiAttributeAssertion attributeName="name" comparisonType="None"/>
-                        <uiAttributeAssertion attributeName="src" comparisonType="None"/>
-                        <uiAttributeAssertion attributeName="width" comparisonType="None"/>
-                      </attributeAssertions>
+                    <uiFieldAssertion resultName="Banner">
+                      <fieldLocator uri="ui:pageobject:field?field=Banner&amp;pageId=pageobjects.ALMBrandHome"/>
                     </uiFieldAssertion>
                   </value>
                 </argument>
@@ -115,7 +108,13 @@
           </steps>
         </clause>
       </clauses>
-      <generatedParameters/>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
     </apiCall>
     <apiCall apiId="customapis.ImageToBase64Encoder" guid="96e73408-c888-4f6f-a295-06aee5d4b5cc" name="ImageToBase64Encoder" testItemId="13" title="Image to Base64 Encoder: ⇒ Base64_Encoded_Img">
       <arguments>
@@ -123,8 +122,8 @@
           <value class="variable">
             <path element="Values"/>
             <path element="fields"/>
-            <path element="Hero_Image"/>
-            <path element="src"/>
+            <path element="Banner"/>
+            <path element="value"/>
           </value>
         </argument>
         <argument id="resultName">
@@ -135,7 +134,7 @@
         </argument>
       </arguments>
     </apiCall>
-    <caseCall guid="05c42563-b74c-4746-a712-6c856e077364" testCaseId="1eb18cb1-3316-4add-8a66-f4315d6b555a" testCasePath="tests/API/Callable_Image_Verification_Base64.testcase" testItemId="15">
+    <caseCall guid="05c42563-b74c-4746-a712-6c856e077364" testCaseId="1eb18cb1-3316-4add-8a66-f4315d6b555a" testCasePath="tests/API/Callable Image Verification Base64.testcase" testItemId="15">
       <arguments>
         <argument id="Base64_Encoded_Image">
           <value class="variable">
@@ -148,6 +147,47 @@
           </value>
         </argument>
       </arguments>
+      <outputArguments>
+        <outputArgument id="Response_Status_Code">
+          <name class="value" valueClass="string">Response_Status_Code</name>
+        </outputArgument>
+        <outputArgument id="Response_Status_Message">
+          <name class="value" valueClass="string">Response_Status_Message</name>
+        </outputArgument>
+        <outputArgument id="Image_Verified">
+          <name class="value" valueClass="string">Image_Verified</name>
+        </outputArgument>
+        <outputArgument id="Response_Error_Message">
+          <name class="value" valueClass="string">Response_Error_Message</name>
+        </outputArgument>
+      </outputArguments>
     </caseCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" guid="5edcf90e-7ea0-488f-813c-31fc671a3324" name="If" testItemId="19" title="If: {Image_Verified = &quot;False&quot;}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="Image_Verified"/>
+            </lhs>
+            <rhs class="value" valueClass="string">False</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="20">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" guid="cc12f96e-ee97-4300-83fe-ecc40771fee4" name="Fail" testItemId="21" title="Fail Test: The image failed to be verified. Description differs from the image content.">
+              <arguments>
+                <argument id="message">
+                  <value class="value" valueClass="string">The image failed to be verified. Description differs from the image content.</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
   </steps>
+  <params/>
+  <args/>
 </testCase>

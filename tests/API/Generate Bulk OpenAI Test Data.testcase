@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="b5cc89d0-7deb-4e5d-8b74-b906478539a9">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="b8b3718c-89e7-480c-b46b-4b8554d9be3b" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">501af8aa-e151-40f1-b11d-e069ed61689f</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.generate.GenerateTestData" guid="4a39e7ff-bae5-431a-9b9f-a1b5bdd4708a" name="GenerateTestData" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.GenerateTestDataTestStepCommand" testItemId="2" title="Generate Test Data: =&gt; OpenAI_Test__c">
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="objectType">
+          <value class="value" valueClass="string">OpenAI_Test__c</value>
+        </argument>
+        <argument id="totalRows">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">TestDataFile</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexBulk" guid="80fcfde1-7f63-4ae2-a863-a23676a09b08" name="ApexBulk" testItemId="3" title="Apex Bulk: insert=&gt;OpenAITestBatchId">
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="objectType">
+          <value class="value" valueClass="string">OpenAI_Test__c</value>
+        </argument>
+        <argument id="operation">
+          <value class="value" valueClass="string">insert</value>
+        </argument>
+        <argument id="externalIdFieldName"/>
+        <argument id="assignmentRuleId"/>
+        <argument id="data">
+          <value class="variable">
+            <path element="TestDataFile"/>
+          </value>
+        </argument>
+        <argument id="contentType">
+          <value class="value" valueClass="string">CSV</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpenAITestBatchId</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

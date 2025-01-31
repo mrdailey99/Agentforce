@@ -1,0 +1,11 @@
+{
+  "name" : "SlackChat",
+  "description" : "",
+  "ignoreComponents" : [ ],
+  "rootComponent" : {
+    "allowedNamespace" : [ {
+      "tagName" : "div",
+      "qualifier" : ".[@class='p-view_contents p-view_contents--primary']"
+    } ]
+  }
+}

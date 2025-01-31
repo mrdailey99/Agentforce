@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="659b1f86-324b-4195-a283-8680474c73bf" id="0" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="5ba8a665-5c09-4e6c-89fe-744ba878fc8f" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">501af8aa-e151-40f1-b11d-e069ed61689f</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">OpenAI_Tester</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="dd6218bb-a968-4e44-b052-40c9239f616c" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="64" title="Create Object: OpenAI_Test__c=&gt;OpenAITestId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">OpenAI_Test__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpenAITestId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Intent__c">
+          <value class="variable">
+            <path element="SourceData"/>
+            <path element="Intent"/>
+          </value>
+        </argument>
+        <argument id="Utterance__c">
+          <value class="variable">
+            <path element="SourceData"/>
+            <path element="Utterance"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">OpenAI_Test__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Intent__c" name="Intent__c" title="Intent__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Utterance__c" name="Utterance__c" title="Utterance__c"/>
+      </generatedParameters>
+    </apiCall>
+    <caseCall guid="a1e0da5b-d3c4-4d87-8be5-5b6da74c7aaa" testCaseId="7a2f99b9-033e-45be-995e-6092240d3504" testCasePath="tests/API/Callable Utterance Intent Match.testcase" testItemId="63">
+      <arguments>
+        <argument id="Utterance">
+          <value class="variable">
+            <path element="SourceData"/>
+            <path element="Utterance"/>
+          </value>
+        </argument>
+        <argument id="Intent">
+          <value class="variable">
+            <path element="SourceData"/>
+            <path element="Intent"/>
+          </value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="Response_Status_Code">
+          <name class="value" valueClass="string">Response_Status_Code</name>
+        </outputArgument>
+        <outputArgument id="Response_Status_Message">
+          <name class="value" valueClass="string">Response_Status_Message</name>
+        </outputArgument>
+        <outputArgument id="Utterance_Intent_Match">
+          <name class="value" valueClass="string">Utterance_Intent_Match</name>
+        </outputArgument>
+        <outputArgument id="Response_Error_Message">
+          <name class="value" valueClass="string">Response_Error_Message</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexUpdateObject" guid="3e0009fe-8b05-44b1-a802-d66e97e6e4a4" name="ApexUpdateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand" testItemId="65" title="Update Object: OpenAI_Test__c = {OpenAITestId}">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">OpenAI_Test__c</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">OpenAI_TestUpdated</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="objectId">
+          <value class="variable">
+            <path element="OpenAITestId"/>
+          </value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Utterance_Intent_Match__c">
+          <value class="variable">
+            <path element="Utterance_Intent_Match"/>
+          </value>
+        </argument>
+        <argument id="Response_Error_Message__c">
+          <value class="variable">
+            <path element="Response_Error_Message"/>
+          </value>
+        </argument>
+        <argument id="Response_Status_Code__c">
+          <value class="variable">
+            <path element="Response_Status_Code"/>
+          </value>
+        </argument>
+        <argument id="Response_Status_Message__c">
+          <value class="variable">
+            <path element="Response_Status_Message"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.CustomObjectName">OpenAI_Test__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Utterance_Intent_Match__c" name="Utterance_Intent_Match__c" title="Utterance_Intent_Match__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Response_Error_Message__c" name="Response_Error_Message__c" title="Response_Error_Message__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Response_Status_Code__c" name="Response_Status_Code__c" title="Response_Status_Code__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=OpenAI_Test__c&amp;field=Response_Status_Message__c" name="Response_Status_Message__c" title="Response_Status_Message__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="Utterance" passwordVariableAllowed="true" title="Utterance">
+      <summary>The prompt to send to the OpenAI API.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="Intent" passwordVariableAllowed="true" title="Intent">
+      <summary>The intent for the response to match the request to.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="Utterance">
+      <value class="value" valueClass="string">I've forgotten my password. How do I reset it?</value>
+    </argument>
+    <argument id="Intent">
+      <value class="value" valueClass="string">Password Reset</value>
+    </argument>
+  </args>
+  <parameterValueSources>
+    <parameterValueSource variableName="SourceData" variableScope="Test">
+      <cacheToken>C:/Users/mrdai/git/Agentforce/templates/Utterances (1).xlsx;1738098338060</cacheToken>
+      <cachedParameters>
+        <apiParam name="RowNumber"/>
+        <apiParam name="Utterance"/>
+        <apiParam name="Intent"/>
+      </cachedParameters>
+      <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+        <workbookPath class="value" valueClass="string">templates/Utterances (1).xlsx</workbookPath>
+        <worksheetName class="value" valueClass="string">Sheet0</worksheetName>
+        <valuesRange class="value" valueClass="string">A1:B80</valuesRange>
+      </sourceValue>
+    </parameterValueSource>
+  </parameterValueSources>
+</testCase>

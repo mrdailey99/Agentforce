@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="5f69848b-11db-4c4b-9066-ae7256a2d8ba" id="30">
+  <summary/>
+  <steps>
+    <caseCall guid="337bd536-c76f-412e-9bd5-ec58fe63909d" testCaseId="8a8ef2d0-8730-4660-bd5c-de0efdd041c8" testCasePath="tests/API/Callable Utterance Generation.testcase" testItemId="72">
+      <arguments>
+        <argument id="Intent">
+          <value class="variable">
+            <path element="Intent"/>
+          </value>
+        </argument>
+        <argument id="Count">
+          <value class="variable">
+            <path element="Count"/>
+          </value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="Response_Status_Code">
+          <name class="value" valueClass="string">Response_Status_Code</name>
+        </outputArgument>
+        <outputArgument id="Response_Status_Message">
+          <name class="value" valueClass="string">Response_Status_Message</name>
+        </outputArgument>
+        <outputArgument id="Utterances">
+          <name class="value" valueClass="string">Utterances</name>
+        </outputArgument>
+        <outputArgument id="Response_Error_Message">
+          <name class="value" valueClass="string">Response_Error_Message</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" guid="6f3420c3-6dce-4da2-a046-e91ba9bd0175" name="If" testItemId="73" title="If: {Response_Status_Code != 200}">
+      <arguments>
+        <argument id="condition">
+          <value class="ne">
+            <lhs class="variable">
+              <path element="Response_Status_Code"/>
+            </lhs>
+            <rhs class="value" valueClass="decimal">200</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="74">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" guid="16680747-b286-4ad1-aa4e-337d54257c4b" name="Fail" testItemId="75" title="Fail Test: API returned a non-200 return code and the utterances have failed to be generated.">
+              <arguments>
+                <argument id="message">
+                  <value class="value" valueClass="string">API returned a non-200 return code and the utterances have failed to be generated.</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" guid="cd8ee9e6-d9f7-4fcf-9d3c-a60562925dc7" name="Split" testItemId="71" title="Split: {Utterances}=&gt;\\n=&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="Utterances"/>
+          </value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">\\n</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" guid="f6cdd5d5-408c-44a0-a648-98481bfb8077" name="Write" testItemId="65" title="Write: {Tokens}=&gt;templates/Utterances.xlsx">
+      <tags/>
+      <arguments>
+        <argument id="data">
+          <value class="variable">
+            <path element="Tokens"/>
+          </value>
+        </argument>
+        <argument id="dataUrl">
+          <value class="excelTarget" excludeCols="Intent" sheetWriteMode="APPEND">
+            <workbookPath class="value" valueClass="string">templates/Utterances.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet0</worksheetName>
+          </value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">templates/Utterances.xlsx</value>
+        </argument>
+      </arguments>
+      <generatedParameters/>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="Intent" passwordVariableAllowed="true" title="Intent">
+      <summary>The intent of the agent to match to the utterance.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="Count" passwordVariableAllowed="true" title="Count">
+      <summary>Count of the Utterances to generate.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="Intent">
+      <value class="value" valueClass="string">Password Reset</value>
+    </argument>
+    <argument id="Count">
+      <value class="value" valueClass="string">10</value>
+    </argument>
+  </args>
+</testCase>

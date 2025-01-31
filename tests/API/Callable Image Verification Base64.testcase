@@ -125,7 +125,7 @@
           <value class="value" valueClass="string">OpenAI_API</value>
         </argument>
         <argument id="connectionId">
-          <value class="value" valueClass="id">b88f3f57-5268-4db3-a23c-5c9fcc087683</value>
+          <value class="value" valueClass="id">ee0849cc-3df3-4382-bc05-45eb82258a7b</value>
         </argument>
         <argument id="resultName">
           <value class="value" valueClass="string">OpenAI_Platform_Connection</value>
@@ -426,8 +426,8 @@
         <path element="Response_Status_Message"/>
       </sourceValue>
     </param>
-    <param name="Image_Verified" passwordVariableAllowed="true" title="Image Verified">
-      <summary>Indicates whether the Description accurately describes the image that the Image_URL points to. Values are True, False or Unknown.</summary>
+    <param name="Image_Verified" passwordVariableAllowed="true" title="Image_Verified">
+      <summary>The name of the value to be set.  May contain sub-values, e.g. 'Value1.SubValue1'.</summary>
       <type>
         <textType>
           <constraints>
@@ -437,7 +437,7 @@
         </textType>
       </type>
       <sourceValue class="variable">
-        <path element="Utterance_Intent_Match"/>
+        <path element="Image_Verified"/>
       </sourceValue>
     </param>
     <param name="Response_Error_Message" passwordVariableAllowed="true" title="Response_Error_Message">

@@ -1,0 +1,735 @@
+{
+  "componentId" : "fe0956ad-7ce1-45a6-8a8c-c2c22c4e7eef",
+  "name" : "/com/slack/app/div_p-view_contents",
+  "tagName" : "div",
+  "qualifier" : ".[contains(@class,'p-view_contents') and contains(@class,'p-view_contents--primary')]",
+  "parameters" : [ {
+    "name" : "class",
+    "value" : "p-view_contents p-view_contents--primary",
+    "comparisonType" : "contains",
+    "default" : true
+  } ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "1dd85027-7f41-4bb7-a1fa-c1155d7146d2",
+    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+    "label" : "Role 'none'",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "flex_one no_min_height",
+      "comparisonType" : "contains",
+      "default" : true
+    }, {
+      "name" : "role",
+      "value" : "none",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "0031c06a-ee46-43f5-88e2-1fc9c43a3e49",
+        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+        "label" : "Role 'presentation'",
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "presentation",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "5e6635a8-9414-4153-9b51-ef82778805c4",
+            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+            "label" : "Role 'presentation'",
+            "parameters" : [ {
+              "name" : "class",
+              "value" : "c-virtual_list c-virtual_list--scrollbar c-scrollbar c-scrollbar--hidden",
+              "comparisonType" : "contains",
+              "default" : true
+            }, {
+              "name" : "role",
+              "value" : "presentation",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "58488cde-ce1f-4ca6-b537-e788c5ad15a8",
+                "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                "label" : "Role 'presentation'",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "c-scrollbar__hider",
+                  "comparisonType" : "contains",
+                  "default" : true
+                }, {
+                  "name" : "role",
+                  "value" : "presentation",
+                  "comparisonType" : "equals",
+                  "default" : true
+                } ],
+                "elements" : [ {
+                  "type" : "content",
+                  "elements" : [ {
+                    "componentId" : "7c7d380c-0208-426a-8389-ae134e534815",
+                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                    "label" : "Role 'presentation'",
+                    "parameters" : [ {
+                      "name" : "class",
+                      "value" : "c-scrollbar__child",
+                      "comparisonType" : "contains",
+                      "default" : true
+                    }, {
+                      "name" : "role",
+                      "value" : "presentation",
+                      "comparisonType" : "equals",
+                      "default" : true
+                    } ],
+                    "elements" : [ {
+                      "type" : "content",
+                      "elements" : [ {
+                        "componentId" : "ef811dab-03b6-463d-a272-750740aae930",
+                        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                        "label" : "Role 'list'",
+                        "parameters" : [ {
+                          "name" : "class",
+                          "value" : "c-virtual_list__scroll_container",
+                          "comparisonType" : "contains",
+                          "default" : true
+                        }, {
+                          "name" : "role",
+                          "value" : "list",
+                          "comparisonType" : "equals",
+                          "default" : true
+                        } ],
+                        "elements" : [ {
+                          "type" : "content",
+                          "elements" : [ {
+                            "componentId" : "95c7de05-7b9f-4a6a-93e9-a03450252cf3",
+                            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                            "label" : "Role 'listitem'",
+                            "parameters" : [ {
+                              "index" : 5,
+                              "default" : true
+                            }, {
+                              "name" : "class",
+                              "value" : "c-virtual_list__item",
+                              "comparisonType" : "contains",
+                              "default" : true
+                            }, {
+                              "name" : "role",
+                              "value" : "listitem",
+                              "comparisonType" : "equals",
+                              "default" : true
+                            } ],
+                            "elements" : [ {
+                              "type" : "content",
+                              "elements" : [ {
+                                "componentId" : "8be4ef97-15cf-491a-96dd-19fdb3080724",
+                                "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                "label" : "Role 'presentation'",
+                                "parameters" : [ {
+                                  "name" : "class",
+                                  "value" : "c-message_kit__background c-message_kit__message c-message_kit__thread_message",
+                                  "comparisonType" : "contains",
+                                  "default" : true
+                                }, {
+                                  "name" : "role",
+                                  "value" : "presentation",
+                                  "comparisonType" : "equals",
+                                  "default" : true
+                                } ],
+                                "elements" : [ {
+                                  "type" : "content",
+                                  "elements" : [ {
+                                    "componentId" : "9c3ea222-3f64-400d-962d-6f0bb272555d",
+                                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                    "label" : "Role 'document'",
+                                    "parameters" : [ {
+                                      "name" : "class",
+                                      "value" : "c-message_kit__hover",
+                                      "comparisonType" : "contains",
+                                      "default" : true
+                                    }, {
+                                      "name" : "role",
+                                      "value" : "document",
+                                      "comparisonType" : "equals",
+                                      "default" : true
+                                    } ],
+                                    "elements" : [ {
+                                      "type" : "content",
+                                      "elements" : [ {
+                                        "componentId" : "88365e4e-c885-47b9-89fd-f56fe17867bc",
+                                        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                        "label" : "Role 'presentation'",
+                                        "parameters" : [ {
+                                          "name" : "class",
+                                          "value" : "c-message_kit__gutter__right",
+                                          "comparisonType" : "contains",
+                                          "default" : true
+                                        }, {
+                                          "name" : "role",
+                                          "value" : "presentation",
+                                          "comparisonType" : "equals",
+                                          "default" : true
+                                        } ],
+                                        "elements" : [ ]
+                                      } ]
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          }, {
+                            "componentId" : "3a061224-a278-4605-8866-f9f6c0dbf3ed",
+                            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                            "label" : "Role 'listitem'",
+                            "parameters" : [ {
+                              "index" : 6,
+                              "default" : true
+                            }, {
+                              "name" : "class",
+                              "value" : "c-virtual_list__item",
+                              "comparisonType" : "contains",
+                              "default" : true
+                            }, {
+                              "name" : "role",
+                              "value" : "listitem",
+                              "comparisonType" : "equals",
+                              "default" : true
+                            } ],
+                            "elements" : [ {
+                              "type" : "content",
+                              "elements" : [ {
+                                "componentId" : "4b38db17-8f2f-4314-84a6-794b0d5f45ea",
+                                "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                "label" : "Role 'group'",
+                                "parameters" : [ {
+                                  "name" : "class",
+                                  "value" : "p-threads_footer__input p-message_input_unstyled p-message_input_unstyled--attachments-visible",
+                                  "comparisonType" : "contains",
+                                  "default" : true
+                                }, {
+                                  "name" : "role",
+                                  "value" : "group",
+                                  "comparisonType" : "equals",
+                                  "default" : true
+                                } ],
+                                "elements" : [ {
+                                  "type" : "content",
+                                  "elements" : [ {
+                                    "componentId" : "f9776122-157f-4bc3-b374-a467607cf99c",
+                                    "type" : "component::6b762b6b-1c07-4539-89a6-f77fecfaf162",
+                                    "label" : "chatBox",
+                                    "properties" : [ ],
+                                    "parameters" : [ {
+                                      "name" : "class",
+                                      "value" : "c-texty_input_unstyled ql-container focus",
+                                      "comparisonType" : "contains",
+                                      "locatable" : true,
+                                      "default" : true
+                                    } ],
+                                    "interactions" : [ {
+                                      "name" : "Set",
+                                      "title" : "Set",
+                                      "summary" : "Sets the text for the field.",
+                                      "interactionType" : "set",
+                                      "defaultInteraction" : true,
+                                      "testStepTitlePattern" : "{label} field",
+                                      "parameters" : [ {
+                                        "id" : "text",
+                                        "title" : "Value",
+                                        "type" : "TEXT"
+                                      } ],
+                                      "visibility" : "public",
+                                      "implementations" : [ {
+                                        "javaScriptSnippet" : "yield interactions.set(element,  arguments[1], 'inputField');"
+                                      } ]
+                                    } ],
+                                    "elements" : [ ]
+                                  }, {
+                                    "componentId" : "f5a2fe51-fc0c-42b2-b3f1-d435fba89d72",
+                                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                    "label" : "Role 'textbox'",
+                                    "parameters" : [ {
+                                      "name" : "class",
+                                      "value" : "ql-editor ql-blank",
+                                      "comparisonType" : "contains",
+                                      "default" : true
+                                    }, {
+                                      "name" : "role",
+                                      "value" : "textbox",
+                                      "comparisonType" : "equals",
+                                      "default" : true
+                                    } ],
+                                    "elements" : [ {
+                                      "type" : "content",
+                                      "elements" : [ {
+                                        "componentId" : "c31f54a0-c30e-49f4-91cd-61b72cc92fb6",
+                                        "type" : "component::5f7e4824-c81c-4974-8cc0-bd795aba540c",
+                                        "label" : "Chat",
+                                        "properties" : [ ],
+                                        "selectors" : [ {
+                                          "xpath" : ".//p"
+                                        } ],
+                                        "interactions" : [ {
+                                          "name" : "Set",
+                                          "title" : "Set",
+                                          "summary" : "Sets the field to the value.",
+                                          "interactionType" : "set",
+                                          "defaultInteraction" : true,
+                                          "testStepTitlePattern" : "{label} field",
+                                          "parameters" : [ {
+                                            "id" : "text",
+                                            "title" : "Value",
+                                            "type" : "TEXT"
+                                          } ],
+                                          "visibility" : "public",
+                                          "implementations" : [ {
+                                            "javaScriptSnippet" : "yield interactions.set(element,  arguments[1]);"
+                                          } ]
+                                        } ],
+                                        "elements" : [ ]
+                                      } ]
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          }, {
+                            "componentId" : "9d7095b1-8b4e-4bea-8b20-d532ef5f5755",
+                            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                            "label" : "Role 'listitem'",
+                            "parameters" : [ {
+                              "index" : 3,
+                              "default" : true
+                            }, {
+                              "name" : "class",
+                              "value" : "c-virtual_list__item",
+                              "comparisonType" : "contains",
+                              "default" : true
+                            }, {
+                              "name" : "role",
+                              "value" : "listitem",
+                              "comparisonType" : "equals",
+                              "default" : true
+                            } ],
+                            "elements" : [ {
+                              "type" : "content",
+                              "elements" : [ {
+                                "componentId" : "9efd9ea0-e39a-4cb7-916c-73782419d6dc",
+                                "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                "label" : "Role 'presentation'",
+                                "parameters" : [ {
+                                  "name" : "class",
+                                  "value" : "c-message_kit__background c-message_kit__message c-message_kit__thread_message",
+                                  "comparisonType" : "contains",
+                                  "default" : true
+                                }, {
+                                  "name" : "role",
+                                  "value" : "presentation",
+                                  "comparisonType" : "equals",
+                                  "default" : true
+                                } ],
+                                "elements" : [ {
+                                  "type" : "content",
+                                  "elements" : [ {
+                                    "componentId" : "8abbc38d-1518-4173-bf31-51dc71c0c9c2",
+                                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                    "label" : "Role 'document'",
+                                    "parameters" : [ {
+                                      "name" : "class",
+                                      "value" : "c-message_kit__hover",
+                                      "comparisonType" : "contains",
+                                      "default" : true
+                                    }, {
+                                      "name" : "role",
+                                      "value" : "document",
+                                      "comparisonType" : "equals",
+                                      "default" : true
+                                    } ],
+                                    "elements" : [ {
+                                      "type" : "content",
+                                      "elements" : [ {
+                                        "componentId" : "64932485-48ee-40f2-ab12-e15ef424ce0f",
+                                        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                        "label" : "Role 'presentation'",
+                                        "parameters" : [ {
+                                          "name" : "class",
+                                          "value" : "c-message_kit__gutter__right",
+                                          "comparisonType" : "contains",
+                                          "default" : true
+                                        }, {
+                                          "name" : "role",
+                                          "value" : "presentation",
+                                          "comparisonType" : "equals",
+                                          "default" : true
+                                        } ],
+                                        "elements" : [ {
+                                          "type" : "content",
+                                          "elements" : [ {
+                                            "componentId" : "f1b370c2-1227-48b4-ad63-cd5278c77d38",
+                                            "type" : "component::ac80f372-9d93-465e-ba20-267adb52ae54",
+                                            "label" : "AgentResponse",
+                                            "properties" : [ ],
+                                            "selectors" : [ {
+                                              "xpath" : ".//div[contains(@class,'p-mrkdwn_element')]/span"
+                                            } ],
+                                            "attributes" : [ {
+                                              "name" : "Text",
+                                              "attributeName" : "Text",
+                                              "title" : "Text",
+                                              "summary" : "The text value of the element.",
+                                              "valueType" : {
+                                                "id" : "text",
+                                                "constraints" : [ ]
+                                              },
+                                              "implementations" : [ {
+                                                "javaScriptSnippet" : "return yield interactions.getAttribute(element.querySelector('div.p-mrkdwn-element').querySelector('span')), 'textContent', null);"
+                                              } ],
+                                              "locatable" : false,
+                                              "locatorPriority" : 0,
+                                              "locatorParameter" : false,
+                                              "readAssertable" : true,
+                                              "valueAttribute" : false,
+                                              "messageAttribute" : false,
+                                              "property" : false,
+                                              "columnKey" : false,
+                                              "columnValue" : false
+                                            } ],
+                                            "elements" : [ ]
+                                          } ]
+                                        } ]
+                                      } ]
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          }, {
+                            "componentId" : "18256cc2-b2d2-4b5c-a0b5-083424d69569",
+                            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                            "label" : "Role 'listitem'",
+                            "parameters" : [ {
+                              "index" : 7,
+                              "default" : true
+                            }, {
+                              "name" : "class",
+                              "value" : "c-virtual_list__item",
+                              "comparisonType" : "contains",
+                              "default" : true
+                            }, {
+                              "name" : "role",
+                              "value" : "listitem",
+                              "comparisonType" : "equals",
+                              "default" : true
+                            } ],
+                            "elements" : [ {
+                              "type" : "content",
+                              "elements" : [ {
+                                "componentId" : "e447f201-305d-4bac-92d0-afedd9ac8315",
+                                "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                "label" : "Role 'presentation'",
+                                "parameters" : [ {
+                                  "name" : "class",
+                                  "value" : "c-message_kit__background c-message_kit__message c-message_kit__thread_message",
+                                  "comparisonType" : "contains",
+                                  "default" : true
+                                }, {
+                                  "name" : "role",
+                                  "value" : "presentation",
+                                  "comparisonType" : "equals",
+                                  "default" : true
+                                } ],
+                                "elements" : [ {
+                                  "type" : "content",
+                                  "elements" : [ {
+                                    "componentId" : "08519377-9d14-45ff-a723-98b81e4cf43f",
+                                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                    "label" : "Role 'document'",
+                                    "parameters" : [ {
+                                      "name" : "class",
+                                      "value" : "c-message_kit__hover",
+                                      "comparisonType" : "contains",
+                                      "default" : true
+                                    }, {
+                                      "name" : "role",
+                                      "value" : "document",
+                                      "comparisonType" : "equals",
+                                      "default" : true
+                                    } ],
+                                    "elements" : [ {
+                                      "type" : "content",
+                                      "elements" : [ {
+                                        "componentId" : "dcec1049-3b2e-4176-9c9c-fb892388210c",
+                                        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                                        "label" : "Role 'presentation'",
+                                        "parameters" : [ {
+                                          "name" : "class",
+                                          "value" : "c-message_kit__gutter__right",
+                                          "comparisonType" : "contains",
+                                          "default" : true
+                                        }, {
+                                          "name" : "role",
+                                          "value" : "presentation",
+                                          "comparisonType" : "equals",
+                                          "default" : true
+                                        } ],
+                                        "elements" : [ {
+                                          "type" : "content",
+                                          "elements" : [ {
+                                            "componentId" : "83fe3b12-94bb-4b0a-80cc-ad52684cd139",
+                                            "type" : "component::ac80f372-9d93-465e-ba20-267adb52ae54",
+                                            "label" : "AgentResponse",
+                                            "parameters" : [ ],
+                                            "selectors" : [ {
+                                              "xpath" : ".//div[contains(@class,'p-mrkdwn_element')]/span"
+                                            } ],
+                                            "attributes" : [ {
+                                              "name" : "Text",
+                                              "attributeName" : "Text",
+                                              "title" : "Text",
+                                              "summary" : "Gets the text value.",
+                                              "valueType" : {
+                                                "id" : "text",
+                                                "constraints" : [ ]
+                                              },
+                                              "implementations" : [ {
+                                                "javaScriptSnippet" : "return yield interactions.getAttribute(element.querySelector('div.p-mrkdwn-element').querySelector('span')), 'textContent', null);"
+                                              } ],
+                                              "locatable" : false,
+                                              "locatorPriority" : 0,
+                                              "locatorParameter" : false,
+                                              "readAssertable" : true,
+                                              "valueAttribute" : false,
+                                              "messageAttribute" : false,
+                                              "property" : false,
+                                              "columnKey" : false,
+                                              "columnValue" : false
+                                            } ],
+                                            "elements" : [ ]
+                                          } ]
+                                        } ]
+                                      } ]
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ]
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "componentId" : "5b20ac5d-59f2-4fa8-a0fb-89cf98b93d0a",
+    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+    "label" : "Role 'presentation'",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "c-scrollbar c-scrollbar--hidden",
+      "comparisonType" : "contains",
+      "default" : true
+    }, {
+      "name" : "role",
+      "value" : "presentation",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "ec7a5575-24c9-4ce3-a07c-f5c9eac29f50",
+        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+        "label" : "Role 'presentation'",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "c-scrollbar__hider",
+          "comparisonType" : "contains",
+          "default" : true
+        }, {
+          "name" : "role",
+          "value" : "presentation",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "81c0ab04-d82f-4de3-acb7-0042de8c008d",
+            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+            "label" : "Role 'presentation'",
+            "parameters" : [ {
+              "name" : "class",
+              "value" : "c-scrollbar__child",
+              "comparisonType" : "contains",
+              "default" : true
+            }, {
+              "name" : "role",
+              "value" : "presentation",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "fa56d00e-639d-46aa-ad8c-31bcb7388f48",
+                "type" : "component::ad73d1fc-5d8f-42b2-97c0-3f9bcc3935e7",
+                "label" : "Section",
+                "selectors" : [ {
+                  "xpath" : ".//div[contains(@class,'filterContainer__zRQMQ')]/following-sibling::section"
+                } ],
+                "elements" : [ {
+                  "type" : "content",
+                  "elements" : [ {
+                    "componentId" : "c05fa32a-2d35-4e5f-97eb-72c248f58cda",
+                    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                    "label" : "Role 'list'",
+                    "parameters" : [ {
+                      "name" : "class",
+                      "value" : "list__kjXtp",
+                      "comparisonType" : "contains",
+                      "default" : true
+                    }, {
+                      "name" : "role",
+                      "value" : "list",
+                      "comparisonType" : "equals",
+                      "default" : true
+                    } ],
+                    "elements" : [ {
+                      "type" : "content",
+                      "elements" : [ {
+                        "componentId" : "b7d1c86e-4c3f-4955-8d9a-cbd43ece995c",
+                        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                        "label" : "Role 'listitem'",
+                        "parameters" : [ {
+                          "name" : "class",
+                          "value" : "listitem__G1_A6",
+                          "comparisonType" : "contains",
+                          "default" : true
+                        }, {
+                          "name" : "role",
+                          "value" : "listitem",
+                          "comparisonType" : "equals",
+                          "default" : true
+                        } ],
+                        "elements" : [ {
+                          "type" : "content",
+                          "elements" : [ {
+                            "componentId" : "d0c5e97e-bed4-46fb-af40-8b77fbd4c3ba",
+                            "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+                            "label" : "Role 'group'",
+                            "parameters" : [ {
+                              "name" : "class",
+                              "value" : "group__QgrKZ expanded__a7WBd fullWidth__HO3eq fullHeight__hoZsV suppressFixedWidth__mLRpp suppressFixedHeight__AReTI shouldShrinkUnderDefaultWidth__zDDJt",
+                              "comparisonType" : "contains",
+                              "default" : true
+                            }, {
+                              "name" : "role",
+                              "value" : "group",
+                              "comparisonType" : "equals",
+                              "default" : true
+                            } ],
+                            "elements" : [ {
+                              "type" : "content",
+                              "elements" : [ {
+                                "componentId" : "51679465-4bae-4e8d-ab1e-f306b0af4d5c",
+                                "type" : "component::6171f92c-aabe-47ae-9e46-849ec30aa6a3",
+                                "label" : "CoralCloudServiceAgentLink",
+                                "parameters" : [ {
+                                  "name" : "type",
+                                  "value" : "button",
+                                  "comparisonType" : "equals",
+                                  "locatable" : true,
+                                  "default" : true
+                                } ],
+                                "elements" : [ ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ]
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "componentId" : "19a63f70-ff3b-4cdc-9aef-3718e656dfe7",
+    "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+    "label" : "Role 'group'",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "p-workspace__input p-message_input_unstyled p-message_input_unstyled--attachments-visible",
+      "comparisonType" : "contains",
+      "default" : true
+    }, {
+      "name" : "role",
+      "value" : "group",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "20764209-db77-4135-a2d9-c471f7ed7fdb",
+        "type" : "component::791034a5-ca49-4bd9-b6b2-7a18e6738bc7",
+        "label" : "Role 'textbox'",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "ql-editor ql-blank",
+          "comparisonType" : "contains",
+          "default" : true
+        }, {
+          "name" : "role",
+          "value" : "textbox",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "617ca638-7190-4950-bb16-738c39244dc5",
+            "type" : "component::5f7e4824-c81c-4974-8cc0-bd795aba540c",
+            "label" : "SlackChat",
+            "parameters" : [ ],
+            "interactions" : [ {
+              "name" : "Set",
+              "title" : "Set",
+              "summary" : "Sets the field",
+              "interactionType" : "set",
+              "defaultInteraction" : true,
+              "testStepTitlePattern" : "{label} field",
+              "parameters" : [ {
+                "id" : "text",
+                "title" : "Value",
+                "type" : "TEXT"
+              } ],
+              "visibility" : "public",
+              "implementations" : [ {
+                "javaScriptSnippet" : "yield interactions.set(element,  arguments[1], 'inputField');"
+              } ]
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

@@ -24,5 +24,8 @@ public class AgentforceChat {
 
 	@FindBy(xpath = "//iframe[contains(@id,'embeddedMessagingFrame')]")
 	public Frame frame;
+	@TextType()
+	@FindBy(xpath = "//input[@id='domain']")
+	public WebElement enterYourWorkspaceSSlackURL;
 			
 }
